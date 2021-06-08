@@ -10,3 +10,11 @@ docker build -t landsbjorg_sar_image .
 ```
 docker run -d --name landsbjorg_sar_container -p 80:80 landsbjorg_sar_image
 ```
+# Push to Azure
+```
+az login
+az acr login --name landsbjorgsar.azurecr.io
+
+docker tag landsbjorg_sar_image landsbjorgsar.azurecr.io/landsbjorg_sar_container:v1
+docker push landsbjorgsar.azurecr.io/landsbjorg_sar_container:v1
+```
