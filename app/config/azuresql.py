@@ -16,7 +16,7 @@ database = os.getenv("MSSQLDATABASE")
 username = os.getenv("MSSQLUSER")
 password = os.getenv("MSSQLPASS")
 #print(server, database, username)
-SQLALCHEMY_DATABASE_URL = "mssql+pyodbc://uteamup:" + password + "@" + server + "/" + database + "?driver=ODBC+Driver+17+for+SQL+Server"
+SQLALCHEMY_DATABASE_URL = "mssql+pyodbc://" + username + ":" + password + "@" + server + "/" + database + "?driver=ODBC+Driver+17+for+SQL+Server"
 #print(SQLALCHEMY_DATABASE_URL)
 
 engine = create_engine(
